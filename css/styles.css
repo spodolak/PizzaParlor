@@ -1,6 +1,7 @@
 body {
   background-color: #B7AC44;
   font-family: 'Oswald', sans-serif;
+  image: https://elkgroveses.com/image/137722-full_cute-cartoon-png-image-cartoon-pizza-slice-transparent.png
 }
 
 
@@ -12,6 +13,7 @@ body {
   color: #DF362D;
 }
 
-.output {
+.order {
+  display: none;
   margin-top: 55px;
 }

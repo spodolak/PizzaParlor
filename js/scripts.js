@@ -49,8 +49,13 @@ var pizza = new Pizza();
 	}
 	
 
-	function showOrder(name, toppingOne, toppingTwo, toppingThree)	{
-		$("#outputOrder").html(name + ": Your " + size + " pizza with "+ toppingOne + ", " + toppingTwo + ", and " + toppingThree + " will be ready in 15 minutes. Total Due: " + cost );
+	function showOrder(name, size, toppingOne, toppingTwo, toppingThree, cost)	{
+		$("#order-name").text(name);
+		$("#size").text(size);
+		$("#output-topping-one").text(toppingOne);
+		$("#output-topping-two").text(toppingTwo);
+		$("#output-topping-three").text(toppingThree);
+		$("#cost").text(cost);
 	}
 
 	$('form').submit(function(event) {
@@ -67,6 +72,7 @@ var pizza = new Pizza();
 		pizza.AddTopping(toppingThree);
 		cost = pizza.Cost();
 		console.log(pizza);
+		$("div").removeClass("order");
 		showOrder(name, toppingOne, toppingTwo, toppingThree, cost);
 	});
 });
