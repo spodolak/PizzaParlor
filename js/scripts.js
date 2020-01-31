@@ -1,13 +1,21 @@
 $(document).ready(function() {
 
-// Business Logic
+// BUSINESS LOGIC
+//Orders Object and Prototypes
+function Order() {
+	this.orders = []
+}
+Order.prototype.AddPizza = function(pizza)	{
+	this.orders.push(pizza);
+}
+
+//Pizza Object and Prototypes
 function Pizza() {
 	this.name = name,
 	this.size = size,
 	this.toppings = [], 
 	this.cost = 0
 }
-
 Pizza.prototype.AddName = function(name) {
 	this.name = name ;
 }
@@ -17,7 +25,6 @@ Pizza.prototype.AddSize = function(size)	{
 Pizza.prototype.AddTopping = function(topping) {
 	this.toppings.push(topping);
 }
-
 Pizza.prototype.Cost = function() {
 	if (this.size === "small") {
 		return this.cost = 10;
@@ -28,10 +35,11 @@ Pizza.prototype.Cost = function() {
 	}
 }
 
+//Global variables to serve as placeholder databases
+var order = new Order();
 var pizza = new Pizza();
 
-// User Interface Logic
-
+// USER INTERFACE LOGIC
 	function getName()	{
 		return $("#inputted-name").val();
 	}
@@ -55,7 +63,7 @@ var pizza = new Pizza();
 		$("#cost").text(pizza.cost);
 	}
 
-	$('form').submit(function(event) {
+	$("form#order").submit(function(event) {
 		event.preventDefault();
 		pizza.AddName(getName());
 		pizza.AddSize(getSize());
@@ -63,7 +71,8 @@ var pizza = new Pizza();
 		pizza.AddTopping(getToppingTwo());
 		pizza.AddTopping(getToppingThree());
 		cost = pizza.Cost();
-		console.log(pizza);
+		order.AddPizza(pizza);
+		console.log(order);
 		$("div").removeClass("order");
 		showOrder();
 	});

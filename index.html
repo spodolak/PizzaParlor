@@ -16,7 +16,7 @@
     <div class="row">
       <div class="col-md-6 offset-md-3 box-decore">
         <h1 class="text-center">Pizza Parlor</h1>  
-        <form>
+        <form id="order">
           <div class="form-group">
             <label for="input-1"><p>Enter your name:</p></label>
             <input type="text" class="form-control" id="inputted-name">
@@ -55,16 +55,29 @@
             <input type="checkbox" class="form-check-input" id="checkbox-1">
             <label class="form-check-label" for="checkbox-1">Check for gluten-free crust</label>
           </div>
-          <button id="submitBtn" type="submit" class="btn btn-warning btn-lg btn-block">Submit</button>
+          <button id="submitBtn" type="submit" class="btn btn-warning btn-lg btn-block">Place Order</button>
         </form>
       </div>
-    </div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-6 offset-md-3 box-decore">
+				<form id="reorder">
+					<h1 class="text-center">Pizza Parlor</h1>  
+					<form>
+						<p>Would you like to place another order?</p>
+						<button id="yes-reorder" type="submit" class="btn btn-warning btn-lg btn-block">Place Another Order</button>
+						<button id="no-reorder" type="submit" class="btn btn-warning btn-lg btn-block">No Thanks</button>
+					</form>
+				</form>
+			</div>
+		</div>
 
 		<div class="row">
 			<div class="order">
 				<div class="outputOrder">
 					<div class="col-md-6 offset-md-3 box-decore">
-						<h1>Order for <span id="order-name"></span></h1>
+						<h1><u>Order for <span id="order-name"></span></u></h1>
 						<p>Your <span id="size"></span> pizza with <span id="output-toppings"></span> will be ready in 15 minutes.</p>
 						<h1>Total Due: $<span id="cost"></span>.00</h1>
 						<div id="orderDetails"></div>
@@ -72,6 +85,7 @@
 				</div>
 			</div>
 		</div>
+
   </div>
 </body>
 
