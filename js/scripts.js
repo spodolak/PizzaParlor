@@ -3,7 +3,7 @@ $(document).ready(function() {
 // Business Logic
 function Pizza() {
 	this.name = name,
-	this.size = size 
+	this.size = size
 	this.toppings = [], 
 	this.cost = 0
 }
@@ -19,7 +19,6 @@ Pizza.prototype.AddTopping = function(topping) {
 }
 
 Pizza.prototype.Cost = function() {
-	console.log(this.size);
 	if (this.size = "small") {
 		return this.cost = 10;
 	} else if (this.size = "medium") {
@@ -37,7 +36,8 @@ var pizza = new Pizza();
 		return $("#inputted-name").val();
 	}
 	function getSize()	{
-		return $("select#size").val();
+		var size = parseInt($("select#size").val());
+		console.log(size);
 	}
 	function getToppingOne()	{
 		return $("select#topping-1").val();
@@ -58,15 +58,16 @@ var pizza = new Pizza();
 		event.preventDefault();
 		name = getName();
 		size = getSize();
+		console.log(size);
 		toppingOne = getToppingOne ();
 		toppingTwo = getToppingTwo ();
 		toppingThree = getToppingThree();
 		pizza.AddName(name);
+		pizza.AddSize(size);
 		pizza.AddTopping(toppingOne);
 		pizza.AddTopping(toppingTwo);
 		pizza.AddTopping(toppingThree);
 		pizza.Cost();
-		console.log(pizza);
 		showOrder(name, toppingOne, toppingTwo, toppingThree);
 	});
 });
