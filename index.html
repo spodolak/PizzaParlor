@@ -2,47 +2,64 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags for bootstrap 4 -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Styles  -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/scripts.js"></script>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- JavaScript  -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/scripts.js"></script>
-
-  <title>Web Template</title>
+  <title>Pizza Parlor</title>
 </head>
 
 <body>
   <div class="container">
-    <!-- input form  -->
     <div class="row">
       <div class="col-md-6 offset-md-3 box-decore">
-        <h1 class="text-center">Boilerplate Website</h1>
+        <h1 class="text-center">Pizza Parlor</h1>
         <form>
           <div class="form-group">
-            <label for="input-1">Input 1</label>
-            <input type="text" class="form-control" id="input-1" aria-describedby="input">
-            <small id="input1-Help" class="form-text text-muted">You can put your thoughts here.</small>
+            <label for="input-1">Enter your name:</label>
+            <input type="text" class="form-control" id="inputted-name">
           </div>
-          <div class="form-group">
-            <label for="input-2">Input 2</label>
-            <input type="text" class="form-control" id="input-2">
-          </div>
+          <p>Choose your pizza size:</p>
+          <select class="form-control" id="size">
+            <option class="answer" value="0"></option>
+            <option class="answer" value="1">small</option>
+            <option class="answer" value="2">medium</option>
+            <option class="answer" value="3">large</option>
+          </select>
+          <p>Choose three toppings:</p>
+          <select class="form-control" id="topping-1">
+            <option class="answer" value="0"></option>
+            <option class="answer" value="pepperoni">pepperoni</option>
+            <option class="answer" value="artichoke">artichoke</option>
+            <option class="answer" value="anchovy">anchovy</option>
+            <option class="answer" value="extra cheese">extra cheese</option>
+          </select>
+          <select class="form-control" id="topping-2">
+            <option class="answer" value="0"></option>
+            <option class="answer" value="pepperoni">pepperoni</option>
+            <option class="answer" value="artichoke">artichoke</option>
+            <option class="answer" value="anchovy">anchovy</option>
+            <option class="answer" value="extra cheese">extra cheese</option>
+          </select>
+          <select class="form-control" id="topping-3">
+            <option class="answer" value="0"></option>
+            <option class="answer" value="pepperoni">pepperoni</option>
+            <option class="answer" value="artichoke">artichoke</option>
+            <option class="answer" value="anchovy">anchovy</option>
+            <option class="answer" value="extra cheese">extra cheese</option>
+          </select>
+          <br>
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="checkbox-1">
-            <label class="form-check-label" for="checkbox-1">Check me out</label>
+            <label class="form-check-label" for="checkbox-1">Check for gluten-free crust</label>
           </div>
-          <button id="submitBtn" type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+          <button id="submitBtn" type="submit" class="btn btn-warning btn-lg btn-block">Submit</button>
         </form>
       </div>
     </div>
 
-    <!-- output box  -->
+    
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <div class="output">Output here</div>
