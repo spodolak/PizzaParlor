@@ -55,24 +55,27 @@
             <input type="checkbox" class="form-check-input" id="checkbox-1">
             <label class="form-check-label" for="checkbox-1">Check for gluten-free crust</label>
           </div>
-          <button id="submitBtn" type="submit" class="btn btn-warning btn-lg btn-block">Place Order</button>
+          <button id="order"  class="btn btn-warning btn-lg btn-block">Place Order</button>
         </form>
       </div>
 		</div>
 		
-		<div class="row order-output">
+		<div class="row order-again">
 			<div class="col-md-6 offset-md-3 box-decore">
 				<div class="order-ouput">
 					<h1 class="text-center">Pizza Parlor</h1>  
-						<form id="reorder">
-							<p class="text-center">Would you like to place another order?</p>
-							<button id="yes-reorder" type="submit" class="btn btn-warning btn-lg btn-block">Place Another Order</button>
-							<button id="no-reorder" type="submit" class="btn btn-warning btn-lg btn-block">No Thanks</button>
+					<form id="yes-reorder">
+						<p class="text-center">Would you like to place another order?</p>
+						<button class="btn btn-warning btn-lg btn-block">Place Another Order</button>
+					</form>
+					<br>
+					<form id="no-reorder">
+						<button class="btn btn-warning btn-lg btn-block">No Thanks</button>
 					</form>
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="row order-output">
 			<div class="col-md-6 offset-md-3 box-decore">
 				<h1><u>Order for <span id="order-name"></span></u></h1>

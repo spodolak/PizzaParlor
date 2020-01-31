@@ -73,8 +73,21 @@ var pizza = new Pizza();
 		cost = pizza.Cost();
 		order.AddPizza(pizza);
 		console.log(order);
-		$("div").removeClass("order-output");
+		$(".order-again").toggle();
 		$(".order-input").toggle();
+		$("div").removeClass("order-output");
 		showOrder();
 	});
+
+	$("form#yes-reorder").submit(function(event)	{
+		event.preventDefault();
+		$(".order-input").toggle();
+		$(".order-again").toggle();
+
+	});
+	$("form#order-output").submit(function(event)	{
+
+	});
 });
+
+
