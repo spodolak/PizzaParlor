@@ -50,14 +50,13 @@ var pizza = new Pizza();
 	
 
 	function showOrder(name, toppingOne, toppingTwo, toppingThree)	{
-		$(".output").html("Hi " + name + "! Your " + size + " pizza with "+ toppingOne + ", " + toppingTwo + ", and " + toppingThree + " will be ready in 15 minutes.");
+		$("#outputOrder").html(name + ": Your " + size + " pizza with "+ toppingOne + ", " + toppingTwo + ", and " + toppingThree + " will be ready in 15 minutes. Total Due: " + cost );
 	}
 
 	$('form').submit(function(event) {
 		event.preventDefault();
 		name = getName();
 		size = getSize();
-		console.log(size);
 		toppingOne = getToppingOne ();
 		toppingTwo = getToppingTwo ();
 		toppingThree = getToppingThree();
@@ -66,24 +65,8 @@ var pizza = new Pizza();
 		pizza.AddTopping(toppingOne);
 		pizza.AddTopping(toppingTwo);
 		pizza.AddTopping(toppingThree);
-		pizza.Cost();
+		cost = pizza.Cost();
 		console.log(pizza);
-		showOrder(name, toppingOne, toppingTwo, toppingThree);
+		showOrder(name, toppingOne, toppingTwo, toppingThree, cost);
 	});
 });
-
-
-// function getOrderPrintOrder()	{
-// 	var name = $("#inputted-name").val();
-// 	var size = $("#size").val();
-// 	var toppingOne = $("select#topping-1").val();
-// 	var toppingTwo = $("select#topping-2").val();
-// 	var toppingThree = $("select#topping-3").val();
-
-// 	$(".output").html("Hi " + name + "! Your pizza with "+ toppingOne + ", " + toppingTwo + ", and " + toppingThree + " will be ready in 15 minutes.");
-// }
-
-// $('form').submit(function(event) {
-// 	event.preventDefault();
-// 	getOrderPrintOrder();
-// });

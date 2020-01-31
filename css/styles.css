@@ -1,7 +1,15 @@
+body {
+  background-color: #B7AC44;
+  font-family: 'Oswald', sans-serif;
+}
+
+
 .box-decore {
+  background-color: rgba(142, 211, 211, 0.7);
   margin-top: 55px;
   padding: 25px;    
   box-shadow: 1px 1px 15px -4px rgba(0,0,0,.2);
+  color: #DF362D;
 }
 
 .output {
