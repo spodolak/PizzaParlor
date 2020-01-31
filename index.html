@@ -13,10 +13,10 @@
 
 <body>
   <div class="container">
-    <div class="row">
+    <div class="row order-input">
       <div class="col-md-6 offset-md-3 box-decore">
         <h1 class="text-center">Pizza Parlor</h1>  
-        <form id="order">
+        <form id="order-input">
           <div class="form-group">
             <label for="input-1"><p>Enter your name:</p></label>
             <input type="text" class="form-control" id="inputted-name">
@@ -60,31 +60,29 @@
       </div>
 		</div>
 		
-		<div class="row">
+		<div class="row order-output">
 			<div class="col-md-6 offset-md-3 box-decore">
-				<form id="reorder">
+				<div class="order-ouput">
 					<h1 class="text-center">Pizza Parlor</h1>  
-					<form>
-						<p>Would you like to place another order?</p>
-						<button id="yes-reorder" type="submit" class="btn btn-warning btn-lg btn-block">Place Another Order</button>
-						<button id="no-reorder" type="submit" class="btn btn-warning btn-lg btn-block">No Thanks</button>
+						<form id="reorder">
+							<p class="text-center">Would you like to place another order?</p>
+							<button id="yes-reorder" type="submit" class="btn btn-warning btn-lg btn-block">Place Another Order</button>
+							<button id="no-reorder" type="submit" class="btn btn-warning btn-lg btn-block">No Thanks</button>
 					</form>
-				</form>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="order">
-				<div class="outputOrder">
-					<div class="col-md-6 offset-md-3 box-decore">
-						<h1><u>Order for <span id="order-name"></span></u></h1>
-						<p>Your <span id="size"></span> pizza with <span id="output-toppings"></span> will be ready in 15 minutes.</p>
-						<h1>Total Due: $<span id="cost"></span>.00</h1>
-						<div id="orderDetails"></div>
-					</div>
 				</div>
 			</div>
 		</div>
+		
+		<div class="row order-output">
+			<div class="col-md-6 offset-md-3 box-decore">
+				<h1><u>Order for <span id="order-name"></span></u></h1>
+				<p>Your <span id="size"></span> pizza with <span id="output-toppings"></span> will be ready in 15 minutes.</p>
+				<h1>Total Due: $<span id="cost"></span>.00</h1>
+				<div id="orderDetails"></div>
+			</div>
+		</div>
+
+
 
   </div>
 </body>

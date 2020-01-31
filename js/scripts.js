@@ -63,7 +63,7 @@ var pizza = new Pizza();
 		$("#cost").text(pizza.cost);
 	}
 
-	$("form#order").submit(function(event) {
+	$("form#order-input").submit(function(event) {
 		event.preventDefault();
 		pizza.AddName(getName());
 		pizza.AddSize(getSize());
@@ -73,7 +73,8 @@ var pizza = new Pizza();
 		cost = pizza.Cost();
 		order.AddPizza(pizza);
 		console.log(order);
-		$("div").removeClass("order");
+		$("div").removeClass("order-output");
+		$(".order-input").toggle();
 		showOrder();
 	});
 });
