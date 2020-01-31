@@ -11,7 +11,7 @@ function Pizza() {
 Pizza.prototype.AddName = function(name) {
 	this.name = name ;
 }
-Pizza.prototype.AddSize = function(size)	{
+Pizza.prototype.AddSize = function(size)	{  
 	this.size = size;
 }
 Pizza.prototype.AddTopping = function(topping) {
@@ -48,31 +48,23 @@ var pizza = new Pizza();
 		return $("select#topping-3").val();
 	}
 	
-
-	function showOrder(name, size, toppingOne, toppingTwo, toppingThree, cost)	{
-		$("#order-name").text(name);
-		$("#size").text(size);
-		$("#output-topping-one").text(toppingOne);
-		$("#output-topping-two").text(toppingTwo);
-		$("#output-topping-three").text(toppingThree);
-		$("#cost").text(cost);
+	function showOrder()	{
+		$("#order-name").text(pizza.name);
+		$("#size").html(pizza.size);
+		$("#output-toppings").text(pizza.toppings.join(', '));
+		$("#cost").text(pizza.cost);
 	}
 
 	$('form').submit(function(event) {
 		event.preventDefault();
-		name = getName();
-		size = getSize();
-		toppingOne = getToppingOne ();
-		toppingTwo = getToppingTwo ();
-		toppingThree = getToppingThree();
-		pizza.AddName(name);
-		pizza.AddSize(size);
-		pizza.AddTopping(toppingOne);
-		pizza.AddTopping(toppingTwo);
-		pizza.AddTopping(toppingThree);
+		pizza.AddName(getName());
+		pizza.AddSize(getSize());
+		pizza.AddTopping(getToppingOne());
+		pizza.AddTopping(getToppingTwo());
+		pizza.AddTopping(getToppingThree());
 		cost = pizza.Cost();
 		console.log(pizza);
 		$("div").removeClass("order");
-		showOrder(name, toppingOne, toppingTwo, toppingThree, cost);
+		showOrder();
 	});
 });
