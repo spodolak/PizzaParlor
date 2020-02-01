@@ -35,7 +35,7 @@ Pizza.prototype.Cost = function() {
 	}
 }
 
-//Global variables to serve as placeholder databases
+//Global variables to serve as database placeholders
 var order = new Order();
 var pizza = new Pizza();
 
@@ -65,7 +65,6 @@ var pizza = new Pizza();
 		$("select#topping-3").val("");
 		return toppingThree;
 	}
-	
 	function showOrder()	{
 		$("#order-name").text(pizza.name);
 		$("#size").html(pizza.size);
@@ -73,6 +72,7 @@ var pizza = new Pizza();
 		$("#cost").text(pizza.cost);
 	}
 
+	// Button Functions
 	$("form#order-input").submit(function(event) {
 		event.preventDefault();
 		pizza.AddName(getName());
@@ -80,12 +80,8 @@ var pizza = new Pizza();
 		pizza.AddTopping(getToppingOne());
 		pizza.AddTopping(getToppingTwo());
 		pizza.AddTopping(getToppingThree());
-
 		cost = pizza.Cost();
 		order.AddPizza(pizza);
-		console.log(order);
-
-
 		$(".order-again").toggle();
 		$(".order-input").toggle();
 		$("div").removeClass("order-output");
