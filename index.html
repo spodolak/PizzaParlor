@@ -2,20 +2,24 @@
 <html lang="en">
 
 <head>
-  <script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/scripts.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Oswald:500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/scripts.js"></script>
 
   <title>Pizza Parlor</title>
 </head>
 
 <body>
   <div class="container">
+    <div class="row" id="logo">
+    </div>
     <div class="row order-input">
       <div class="col-md-6 offset-md-3 box-decore">
-        <h1 class="text-center">Pizza Parlor</h1>  
+        <img src="img/neon_pizza_sign.webp" width= 250 id="logo">
+        <br>
+        <!-- <h1 class="text-center">Pizza Parlor</h1>   -->
         <form id="order-input">
           <div class="form-group">
             <label for="input-1"><p>Enter your name:</p></label>
@@ -60,12 +64,21 @@
       </div>
 		</div>
 		
+    <div class="row order-output">
+      <div class="col-md-6 offset-md-3 box-decore">
+        <h1><u>Order for <span id="order-name"></span></u></h1>
+        <p>Your <span id="size"></span> pizza with <span id="output-toppings"></span> will be ready in 15 minutes.</p>
+        <h1>Total Due: $<span id="cost"></span>.00</h1>
+        <div id="orderDetails"></div>
+        <img src="https://media1.giphy.com/media/KfTdiF2DBd868vpUzh/giphy.webp?cid=790b761103dcb00e066a6c7063f55b3a40a9135884bfde07&rid=giphy.webp" id="logo"> 
+      </div>
+    </div>
+
 		<div class="row order-again">
 			<div class="col-md-6 offset-md-3 box-decore">
-				<div class="order-ouput">
-					<h1 class="text-center">Pizza Parlor</h1>  
+        <div class="order-ouput">
 					<form id="yes-reorder">
-						<p class="text-center">Would you like to place another order?</p>
+            <p class="text-center">Would you like to place another order?</p>
 						<button class="btn btn-warning btn-lg btn-block">Place Another Order</button>
 					</form>
 					<br>
@@ -76,14 +89,7 @@
 			</div>
 		</div>
 
-		<div class="row order-output">
-			<div class="col-md-6 offset-md-3 box-decore">
-				<h1><u>Order for <span id="order-name"></span></u></h1>
-				<p>Your <span id="size"></span> pizza with <span id="output-toppings"></span> will be ready in 15 minutes.</p>
-				<h1>Total Due: $<span id="cost"></span>.00</h1>
-				<div id="orderDetails"></div>
-			</div>
-		</div>
+    
   </div>
 </body>
 </html>
