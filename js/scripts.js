@@ -41,19 +41,29 @@ var pizza = new Pizza();
 
 // USER INTERFACE LOGIC
 	function getName()	{
-		return $("#inputted-name").val();
+		var name = $("#inputted-name").val();
+		$("#inputted-name").val("");
+		return name;
 	}
 	function getSize()	{
-		return $("select#size").val();
+		var size = $("select#size").val();
+		$("select#size").val("");
+		return size;
 	}
 	function getToppingOne()	{
-		return $("select#topping-1").val();
+		var toppingOne = $("select#topping-1").val();
+		$("select#topping-1").val("");
+		return toppingOne;  
 	}
 	function getToppingTwo()	{
-		return $("select#topping-2").val();
+		var toppingTwo = $("select#topping-2").val();
+		$("select#topping-2").val("");
+		return toppingTwo;
 	}
 	function getToppingThree()	{
-		return $("select#topping-3").val();
+		var toppingThree = $("select#topping-3").val();
+		$("select#topping-3").val("");
+		return toppingThree;
 	}
 	
 	function showOrder()	{
@@ -70,9 +80,12 @@ var pizza = new Pizza();
 		pizza.AddTopping(getToppingOne());
 		pizza.AddTopping(getToppingTwo());
 		pizza.AddTopping(getToppingThree());
+
 		cost = pizza.Cost();
 		order.AddPizza(pizza);
 		console.log(order);
+
+
 		$(".order-again").toggle();
 		$(".order-input").toggle();
 		$("div").removeClass("order-output");
