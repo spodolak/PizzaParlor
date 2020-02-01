@@ -15,14 +15,15 @@ A website created with JavaScript, CSS and HTML where a user enters a....
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Spec** | Input | Output|
-|
+| **Take customer name, size people, and three toppings and display order** | Joan, medium, pepperoni, artichoke, extra cheese  | Order for Joan:
+Your medium pizza with pepperoni, artichoke, extra cheese will be ready in 15 minutes.|
+
 
 
 ## Setup/Installation Requirements
 
 1. Clone this repository to your desktop. If using Git Bash you can do this by typing "git clone https://github.com/spodolak/epicodus_pizza-parlor.git" into your command line while in desktop directory.
-2. Navigate inside project directory by entering "cd pizza-parlor" in Git Bash.
+2. Navigate inside project directory by entering "cd epicodus_pizza-parlor" in Git Bash.
 3. Open index.html file in your browser of choice by entering "open index.html".
 
 

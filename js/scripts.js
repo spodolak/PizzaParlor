@@ -46,8 +46,8 @@ var pizza = new Pizza();
 		return name;
 	}
 	function getSize()	{
-		var size = $("select#size").val();
-		$("select#size").val("");
+		var size = $("select#size-choice").val();
+		$("select#size-choice").val("");
 		return size;
 	}
 	function getToppingOne()	{
