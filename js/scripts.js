@@ -5,7 +5,7 @@ $(document).ready(function() {
 function Order() {
 	this.orders = []
 }
-Order.prototype.AddPizza = function(pizza)	{
+Order.prototype.addPizza = function(pizza)	{
 	this.orders.push(pizza);
 }
 
@@ -16,16 +16,16 @@ function Pizza() {
 	this.toppings = [], 
 	this.cost = 0
 }
-Pizza.prototype.AddName = function(name) {
+Pizza.prototype.addName = function(name) {
 	this.name = name ;
 }
-Pizza.prototype.AddSize = function(size)	{  
+Pizza.prototype.addSize = function(size)	{  
 	this.size = size;
 }
-Pizza.prototype.AddTopping = function(topping) {
+Pizza.prototype.addTopping = function(topping) {
 	this.toppings.push(topping);
 }
-Pizza.prototype.Cost = function() {
+Pizza.prototype.addCost = function() {
 	if (this.size === "small") {
 		return this.cost = 10;
 	} else if (this.size === "medium") {
@@ -35,9 +35,18 @@ Pizza.prototype.Cost = function() {
 	}
 }
 
+function showOrders()	{
+	var htmlForOrders = "";
+	order.orders.forEach(function()	{
+		htmlForOrders += "<li>" + this.name + "</li>";
+		console.log(this);
+	});
+	$("ul#open-orders-list").html(htmlForOrders);
+}
+
+
 //Global variables to serve as database placeholders
 var order = new Order();
-var pizza = new Pizza();
 
 // USER INTERFACE LOGIC
 	function getName()	{
@@ -65,37 +74,40 @@ var pizza = new Pizza();
 		$("select#topping-3").val("");
 		return toppingThree;
 	}
-	function showOrder()	{
+	function showOrder(pizza)	{
 		$("#order-name").text(pizza.name);
 		$("#size").html(pizza.size);
 		$("#output-toppings").text(pizza.toppings.join(', '));
 		$("#cost").text(pizza.cost);
 	}
-
+	
 	// Button Functions
 	$("form#order-input").submit(function(event) {
 		event.preventDefault();
-		pizza.AddName(getName());
-		pizza.AddSize(getSize());
-		pizza.AddTopping(getToppingOne());
-		pizza.AddTopping(getToppingTwo());
-		pizza.AddTopping(getToppingThree());
-		cost = pizza.Cost();
-		order.AddPizza(pizza);
+		var pizza = new Pizza();
+		pizza.addName(getName());
+		pizza.addSize(getSize());
+		pizza.addTopping(getToppingOne());
+		pizza.addTopping(getToppingTwo());
+		pizza.addTopping(getToppingThree());
+		cost = pizza.addCost();
+		order.addPizza(pizza);
 		$(".order-again").toggle();
 		$(".order-input").toggle();
 		$("div").removeClass("order-output");
-		showOrder();
+		console.log(order);
+		showOrder(pizza);
 	});
 
 	$("form#yes-reorder").submit(function(event)	{
 		event.preventDefault();
 		$(".order-input").toggle();
 		$(".order-again").toggle();
-
+		showOrders(order);
+		
 	});
-	$("form#order-output").submit(function(event)	{
-
+	$("form#no-reorder").submit(function(event)	{
+		
 	});
 });
 
