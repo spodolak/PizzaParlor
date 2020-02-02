@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+	
 // BUSINESS LOGIC
 //Orders Object and Prototypes
 function Order() {
@@ -7,14 +7,6 @@ function Order() {
 }
 Order.prototype.addPizza = function(pizza)	{
 	this.orders.push(pizza);
-}
-Order.prototype.showOrders = function()	{
-	var htmlForOrders = "";
-	this.orders.forEach(function(pizza)	{
-		console.log(pizza);
-		htmlForOrders += "<li>" + pizza.name + "</li>";
-	});
-	$("ul#open-orders-list").html(htmlForOrders);
 }
 
 //Pizza Object and Prototypes
@@ -42,8 +34,6 @@ Pizza.prototype.addCost = function() {
 		return this.cost = 18;
 	}
 }
-
-
 
 //Global variables to serve as database placeholders
 var order = new Order();
@@ -80,6 +70,15 @@ var order = new Order();
 		$("#output-toppings").text(pizza.toppings.join(', '));
 		$("#cost").text(pizza.cost);
 	}
+	function showOrders(order)	{
+		console.log(order);
+		var htmlForOrders = "";
+		order.orders.forEach(function(pizza)	{
+			console.log(pizza);
+			htmlForOrders += "<li>" + pizza.name + "</li>";
+		});
+		$("ul#open-orders-list").html(htmlForOrders);
+	}
 	
 	// Button Functions
 	$("form#order-input").submit(function(event) {
@@ -92,19 +91,21 @@ var order = new Order();
 		pizza.addTopping(getToppingThree());
 		pizza.addCost();
 		order.addPizza(pizza);
-		$(".order-again").toggle();
-		$(".order-input").toggle();
-		$("div").removeClass("order-output");
+		$(".order-output").show();
+		$(".order-again").show();
+		$(".order-input").hide();
+		$(".open-orders").hide();
 		showOrder(pizza);
 	});
 	$("form#yes-reorder").submit(function(event)	{
 		event.preventDefault();
-		$(".order-input").toggle();
-		$(".order-again").toggle();
-		order.showOrders();
+		$(".order-input").show();
+		$(".open-orders").show();
+		$(".order-output").hide();
+		$(".order-again").hide();
+		showOrders(order);
 	});
 	$("form#no-reorder").submit(function(event)	{
-		
 	});
 });
 
