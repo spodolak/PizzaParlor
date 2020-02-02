@@ -8,6 +8,14 @@ function Order() {
 Order.prototype.addPizza = function(pizza)	{
 	this.orders.push(pizza);
 }
+Order.prototype.showOrders = function()	{
+	var htmlForOrders = "";
+	this.orders.forEach(function(pizza)	{
+		console.log(pizza);
+		htmlForOrders += "<li>" + pizza.name + "</li>";
+	});
+	$("ul#open-orders-list").html(htmlForOrders);
+}
 
 //Pizza Object and Prototypes
 function Pizza() {
@@ -35,14 +43,6 @@ Pizza.prototype.addCost = function() {
 	}
 }
 
-function showOrders()	{
-	var htmlForOrders = "";
-	order.orders.forEach(function()	{
-		htmlForOrders += "<li>" + this.name + "</li>";
-		console.log(this);
-	});
-	$("ul#open-orders-list").html(htmlForOrders);
-}
 
 
 //Global variables to serve as database placeholders
@@ -90,21 +90,18 @@ var order = new Order();
 		pizza.addTopping(getToppingOne());
 		pizza.addTopping(getToppingTwo());
 		pizza.addTopping(getToppingThree());
-		cost = pizza.addCost();
+		pizza.addCost();
 		order.addPizza(pizza);
 		$(".order-again").toggle();
 		$(".order-input").toggle();
 		$("div").removeClass("order-output");
-		console.log(order);
 		showOrder(pizza);
 	});
-
 	$("form#yes-reorder").submit(function(event)	{
 		event.preventDefault();
 		$(".order-input").toggle();
 		$(".order-again").toggle();
-		showOrders(order);
-		
+		order.showOrders();
 	});
 	$("form#no-reorder").submit(function(event)	{
 		
